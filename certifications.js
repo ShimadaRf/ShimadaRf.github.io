@@ -20,13 +20,13 @@ const socialLinks = [
 ];
 
 const defaultCertification = {
-    category: 'security-operations',
+    category: 'defensive-security',
     issuer: '',
     issuerLogo: 'CERT',
     logoColor: 'bg-slate-900 border-slate-600 text-slate-200',
     badgeImage: null,
-    tag: 'Certificação',
-    tagColor: 'bg-slate-800 text-slate-300 border-slate-700',
+    tag: 'Defensive Security',
+    tagColor: 'bg-emerald-950 text-emerald-300 border-emerald-800/40',
     title: '',
     subtitle: '',
     description: '',
@@ -45,13 +45,14 @@ function createCertification(overrides = {}) {
 
 const certifications = [
     createCertification({
-        category: 'security-operations',
+        category: 'defensive-security',
         issuer: 'Udemy',
         issuerLogo: 'Udemy',
+        badgeImage: 'assets/images/logoudemy.png',
         logoColor: 'bg-blue-950/80 border-blue-500/40 text-blue-400',
-        tag: 'Defensive Infrastructure',
-        tagColor: 'bg-blue-950 text-blue-300 border-blue-800/40',
-        title: 'Privacy & Data Protection Foundation',
+        tag: 'Defensive Security',
+        tagColor: 'bg-emerald-950 text-emerald-300 border-emerald-800/40',
+        title: 'Endian Firewall',
         description: 'Treinamento prático de configuração, monitoramento e manutenção de firewall corporativo, incluindo regras de filtragem, VPNs e prevenção de intrusões.',
         dateLabel: 'Emitido:',
         dateValue: 'Nov 2025',
@@ -62,8 +63,9 @@ const certifications = [
         category: 'offensive-security',
         issuer: 'Desec Security',
         issuerLogo: 'DESEC',
+        badgeImage: 'assets/images/logodesec.png',
         logoColor: 'bg-black border-amber-500/30 text-amber-500',
-        tag: 'Offensive',
+        tag: 'Offensive Security',
         tagColor: 'bg-red-950 text-red-400 border-red-800/40',
         title: 'Pentest Profissional',
         description: 'Treinamento prático e avançado focado em técnicas de exploração, testes de invasão e pós-exploração em redes corporativas.',
@@ -73,12 +75,13 @@ const certifications = [
         rightIsCode: true,
         pdfUrl: 'certs/desecnovopentest.pdf'
     }),
-        createCertification({
+    createCertification({
         category: 'offensive-security',
         issuer: 'Desec Security',
         issuerLogo: 'DESEC',
+        badgeImage: 'assets/images/logodesec.png',
         logoColor: 'bg-black border-amber-500/30 text-amber-500',
-        tag: 'Offensive',
+        tag: 'Offensive Security',
         tagColor: 'bg-red-950 text-red-400 border-red-800/40',
         title: 'Primeiro Pentest',
         description: 'Demonstração em ambiente controlado de técnicas de exploração, testes de invasão e pós-exploração em redes corporativas.',
@@ -91,9 +94,9 @@ const certifications = [
     createCertification({
         category: 'badges',
         issuer: 'Hack The Box / LetsDefend',
-        badgeImage: 'assets/badges/letsdefendlogo.png',
-        tag: 'Badge / Medalha',
-        tagColor: 'bg-purple-950 text-purple-300 border-purple-800/40',
+        badgeImage: 'assets/images/letsdefendlogo.png',
+        tag: 'Badges',
+        tagColor: 'bg-amber-950 text-amber-300 border-amber-800/40',
         title: 'Malware Analysis Fundamentals',
         subtitle: 'Badge: Malware Analyzer',
         description: 'Análise estática e dinâmica de código malicioso, engenharia reversa de artefatos e identificação de indicadores de comprometimento (IoCs).',
@@ -104,16 +107,16 @@ const certifications = [
         rightColor: 'text-emerald-400'
     }),
     createCertification({
-        category: 'security-operations',
+        category: 'defensive-security',
         issuer: 'CompTIA',
         issuerLogo: 'CompTIA',
-        badgeImage: 'assets/badges/security+badge.png',
+        badgeImage: 'assets/images/security+badge.png',
         logoColor: 'bg-red-950/80 border-red-600/40 text-red-500',
-        tag: 'Security Operations',
-        tagColor: 'bg-slate-800 text-slate-300 border-slate-700',
+        tag: 'Defensive Security',
+        tagColor: 'bg-emerald-950 text-emerald-300 border-emerald-800/40',
         title: 'Security+',
         description: 'Certificação global de referência cobrindo segurança de redes, gerenciamento de riscos, resposta a incidentes e arquitetura defensiva.',
-        dateLabel: '',
+        dateLabel: 'Emitido:',
         dateValue: 'Credencial Internacional',
         rightLabel: 'Ativa',
         rightIcon: 'fa-solid fa-award',
@@ -121,75 +124,79 @@ const certifications = [
         pdfUrl: 'certs/security+.pdf'
     }),
     createCertification({
-        category: 'security-operations',
+        category: 'defensive-security',
         issuer: 'Google / Coursera',
         issuerLogo: 'GOOG',
-        badgeImage: 'assets/badges/googlecybersecuritybadge.png',
+        badgeImage: 'assets/images/googlecybersecuritybadge.png',
         logoColor: 'bg-blue-950/80 border-blue-500/40 text-blue-400',
-        tag: 'Security Operations',
-        tagColor: 'bg-slate-800 text-slate-300 border-slate-700',
+        tag: 'Defensive Security',
+        tagColor: 'bg-emerald-950 text-emerald-300 border-emerald-800/40',
         title: 'Google Cybersecurity Professional',
         description: 'Trilha profissional cobrindo fundamentos de segurança, SIEM, análise de logs, Python para automação e resposta a incidentes.',
-        dateLabel: '',
-        dateValue: 'Credencial Google',
+        dateLabel: 'Emitido:',
+        dateValue: 'May 2026',
         rightLabel: 'Concluído',
         rightIcon: 'fa-solid fa-circle-check',
         rightColor: 'text-emerald-400',
         pdfUrl: 'certs/GoogleCybersecurity.pdf'
     }),
     createCertification({
-        category: 'grc-management',
+        category: 'governance-risk-compliance',
         issuer: 'EXIN',
         issuerLogo: 'EXIN',
+        badgeImage: 'assets/images/rbcisobadge.png',
         logoColor: 'bg-indigo-950/80 border-indigo-500/40 text-indigo-400',
-        tag: 'GRC / Management',
-        tagColor: 'bg-indigo-950 text-indigo-300 border-indigo-800/40',
+        tag: 'Governance, Risk & Compliance (GRC)',
+        tagColor: 'bg-sky-950 text-sky-300 border-sky-800/40',
         title: 'Information Security Officer',
         description: 'Gestão executiva da segurança da informação, políticas corporativas, continuidade de negócios e alinhamento estratégico com ISO/IEC 27001.',
-        dateLabel: '',
-        dateValue: 'Nível: ISO',
+        dateLabel: 'Emitido:',
+        dateValue: 'Apr 2026',
         rightLabel: 'Credencial EXIN',
         pdfUrl: 'certs/ISO.pdf'
     }),
     createCertification({
-        category: 'grc-management',
+        category: 'governance-risk-compliance',
         issuer: 'EXIN',
         issuerLogo: 'EXIN',
+        badgeImage: 'assets/images/ismpbadge.png',
         logoColor: 'bg-indigo-950/80 border-indigo-500/40 text-indigo-400',
-        tag: 'GRC / Management',
-        tagColor: 'bg-indigo-950 text-indigo-300 border-indigo-800/40',
+        tag: 'Governance, Risk & Compliance (GRC)',
+        tagColor: 'bg-sky-950 text-sky-300 border-sky-800/40',
         title: 'Information Security Management Professional',
         description: 'Gestão avançada de controles de segurança, avaliação de riscos, auditoria interna e governança da informação (ISMP).',
-        dateLabel: '',
-        dateValue: 'Nível: Professional',
+        dateLabel: 'Emitido:',
+        dateValue: 'Apr 2026',
         rightLabel: 'ISMP Certified',
         pdfUrl: 'certs/ISMP.pdf'
     }),
     createCertification({
-        category: 'grc-management',
+        category: 'governance-risk-compliance',
         issuer: 'EXIN',
         issuerLogo: 'EXIN',
+        badgeImage: 'assets/images/pdpfbadge.png',
         logoColor: 'bg-indigo-950/80 border-indigo-500/40 text-indigo-400',
-        tag: 'Privacidade & LGPD',
-        tagColor: 'bg-indigo-950 text-indigo-300 border-indigo-800/40',
+        tag: 'Governance, Risk & Compliance (GRC)',
+        tagColor: 'bg-sky-950 text-sky-300 border-sky-800/40',
         title: 'Privacy & Data Protection Foundation',
         description: 'Fundamentos de proteção de dados pessoais, privacidade por design (PbD) e regulamentações internacionais (GDPR / LGPD).',
-        dateLabel: '',
-        dateValue: 'Nível: Foundation',
+        dateLabel: 'Emitido:',
+        dateValue: 'Apr 2026',
         rightLabel: 'PDPF Certified',
         pdfUrl: 'certs/PDPF.pdf'
     }),
     createCertification({
-        category: 'grc-management',
+        category: 'governance-risk-compliance',
         issuer: 'EXIN',
         issuerLogo: 'EXIN',
-        logoColor: 'bg-indigo-950/80 border-indigo-500/40 text-indigo-400',
-        tag: 'GRC / Management',
-        tagColor: 'bg-indigo-950 text-indigo-300 border-indigo-800/40',
+        badgeImage: 'assets/images/isfsbadge.png',
+        logoColor: 'bg-slate-900 border-slate-700 text-slate-300',
+        tag: 'Governance, Risk & Compliance (GRC)',
+        tagColor: 'bg-sky-950 text-sky-300 border-sky-800/40',
         title: 'Information Security Foundation',
         description: 'Conceitos essenciais de confidencialidade, integridade, disponibilidade e gestão básica de ativos e ameaças (ISFS).',
-        dateLabel: '',
-        dateValue: 'Nível: Foundation',
+        dateLabel: 'Emitido:',
+        dateValue: 'Oct 2025',
         rightLabel: 'ISFS Certified',
         pdfUrl: 'certs/ISFS.pdf'
     })
@@ -209,6 +216,26 @@ function renderSocialLinks() {
 
 function renderCert(cert) {
     const clickable = !!cert.pdfUrl;
+    const titleColor = {
+        'offensive-security': 'text-red-400',
+        'defensive-security': 'text-emerald-400',
+        'threat-intelligence': 'text-purple-300',
+        'malware-reverse-engineering': 'text-fuchsia-300',
+        'governance-risk-compliance': 'text-sky-400',
+        'badges': 'text-amber-300'
+    }[cert.category] || 'text-white';
+
+    const tagColorMap = {
+        'offensive-security': 'bg-red-950 text-red-400 border-red-800/40',
+        'defensive-security': 'bg-emerald-950 text-emerald-300 border-emerald-800/40',
+        'threat-intelligence': 'bg-purple-950 text-purple-300 border-purple-800/40',
+        'malware-reverse-engineering': 'bg-fuchsia-950 text-fuchsia-300 border-fuchsia-800/40',
+        'governance-risk-compliance': 'bg-sky-950 text-sky-300 border-sky-800/40',
+        'badges': 'bg-amber-950 text-amber-300 border-amber-800/40'
+    };
+
+    const certTagColor = tagColorMap[cert.category] || cert.tagColor;
+
     const logoBlock = cert.badgeImage
         ? `<div class="badge-img-wrap badge-glow"><img src="${cert.badgeImage}" alt="${cert.title}"></div>`
         : `<div class="w-12 h-12 rounded-lg ${cert.logoColor} border flex items-center justify-center font-bold text-xs tracking-wider flex-shrink-0">${cert.issuerLogo}</div>`;
@@ -234,7 +261,7 @@ function renderCert(cert) {
                     <div class="flex items-center gap-3">
                         ${logoBlock}
                         <div>
-                            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded ${cert.tagColor} border">${cert.tag}</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded ${certTagColor} border">${cert.tag}</span>
                             <p class="text-xs text-slate-400 mt-1">${cert.issuer}</p>
                         </div>
                     </div>

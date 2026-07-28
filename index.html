@@ -49,38 +49,60 @@
             width: 3rem;
             height: 3rem;
             border-radius: 9999px;
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             align-items: center;
             justify-content: center;
             background: radial-gradient(circle, #1e2440 0%, #0a0f1d 100%);
             border: 1px solid rgba(168, 85, 247, 0.4);
             flex-shrink: 0;
+            position: relative;
         }
         .badge-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 110%;
+            height: 110%;
+            object-fit: contain;
+            display: block;
+            transform: translateZ(0);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
     <!-- Header / Banner -->
-    <header class="border-b border-cyber-border bg-cyber-dark/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <div class="p-2.5 bg-cyan-950/80 border border-cyan-500/30 rounded-xl text-cyan-400">
-                    <i class="fa-solid fa-shield-halved text-2xl"></i>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold text-white tracking-wide">Cybersecurity Credentials</h1>
-                    <p class="text-xs text-slate-400">Certificações, Distinções e Badges Práticas</p>
-                </div>
+<header class="border-b border-cyber-border bg-cyber-dark/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row justify-between lg:items-center gap-6">
+
+        <!-- Left -->
+        <div class="flex items-start gap-4">
+
+            <div class="p-3 bg-cyan-950/80 border border-cyan-500/30 rounded-xl text-cyan-400 flex-shrink-0">
+                <i class="fa-solid fa-shield-halved text-3xl"></i>
             </div>
-            <div id="social-links" class="flex items-center gap-3"></div>
+
+            <div>
+
+                <h1 class="text-2xl md:text-3xl font-bold tracking-wide text-white">
+                    Rivelino Sampaio
+                </h1>
+
+                <p class="mt-1 text-cyan-400 font-medium text-sm md:text-base">
+                    Analista de Cibersegurança • Pentest • CTF Player
+                </p>
+
+                <p class="mt-3 max-w-3xl text-sm text-slate-400 leading-relaxed">
+                    Segurança Ofensiva é o foco, mas transito bem por Defensiva, Threat Intelligence e GRC. Aprendizado contínuo via certificações, CTFs e laboratórios práticos.
+                </p>
+
+            </div>
+
         </div>
-    </header>
+
+        <!-- Right -->
+        <div id="social-links" class="flex items-center gap-3 flex-wrap"></div>
+
+    </div>
+</header>
 
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
@@ -92,14 +114,17 @@
             <button onclick="filterCategory('offensive-security')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="offensive-security">
                 <i class="fa-solid fa-terminal mr-1.5 text-red-400"></i> Offensive Security
             </button>
+            <button onclick="filterCategory('defensive-security')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="defensive-security">
+                <i class="fa-solid fa-shield-halved mr-1.5 text-emerald-400"></i> Defensive Security
+            </button>
             <button onclick="filterCategory('threat-intelligence')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="threat-intelligence">
-                <i class="fa-solid fa-bug mr-1.5 text-purple-400"></i> Threat Intelligence & Reverse Engineering
+                <i class="fa-solid fa-bug mr-1.5 text-purple-400"></i> Threat Intelligence
             </button>
-            <button onclick="filterCategory('security-operations')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="security-operations">
-                <i class="fa-solid fa-shield-halved mr-1.5 text-emerald-400"></i> Security Operations & Defensive Infrastructure
+            <button onclick="filterCategory('malware-reverse-engineering')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="malware-reverse-engineering">
+                <i class="fa-solid fa-microchip mr-1.5 text-fuchsia-400"></i> Malware & Reverse Engineering
             </button>
-            <button onclick="filterCategory('grc-management')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="grc-management">
-                <i class="fa-solid fa-file-contract mr-1.5 text-blue-400"></i> GRC / Management
+            <button onclick="filterCategory('governance-risk-compliance')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="governance-risk-compliance">
+                <i class="fa-solid fa-file-contract mr-1.5 text-blue-400"></i> Governance, Risk & Compliance (GRC)
             </button>
             <button onclick="filterCategory('badges')" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white transition" data-cat="badges">
                 <i class="fa-solid fa-ribbon mr-1.5 text-amber-400"></i> Badges
@@ -111,7 +136,7 @@
     </main>
 
     <footer class="border-t border-cyber-border bg-cyber-dark py-6 mt-12 text-center text-xs text-slate-500">
-        <p>© 2026 • Portfólio de SegInfs e Certificações. Hospedado gratuitamente no GitHub Pages.</p>
+        <p>© 2026 • Portfólio de Segurança da Informação. Rivelino Sampaio.</p>
     </footer>
 
     <script src="certifications.js"></script>
