@@ -92,11 +92,11 @@ const certifications = [
         pdfUrl: 'certs/desecprimeiropentest.pdf'
     }),
     createCertification({
-        category: 'badges',
+        category: 'malware-reverse-engineering',
         issuer: 'Hack The Box / LetsDefend',
         badgeImage: 'assets/images/letsdefendlogo.png',
-        tag: 'Badges',
-        tagColor: 'bg-amber-950 text-amber-300 border-amber-800/40',
+        tag: 'Malware & Reverse Engineering',
+        tagColor: 'bg-fuchsia-950 text-fuchsia-300 border-fuchsia-800/40',
         title: 'Malware Analysis Fundamentals',
         subtitle: 'Badge: Malware Analyzer',
         description: 'Análise estática e dinâmica de código malicioso, engenharia reversa de artefatos e identificação de indicadores de comprometimento (IoCs).',
@@ -286,7 +286,7 @@ function renderAllCerts() {
 
     const visibleCertifications = certifications;
     grid.innerHTML = visibleCertifications.map(renderCert).join('');
-    document.getElementById('count-all').textContent = visibleCertifications.filter((cert) => cert.category !== 'badges').length;
+    document.getElementById('count-all').textContent = visibleCertifications.length;
 
     grid.querySelectorAll('.cert-card.has-pdf').forEach((card) => {
         const openPdf = () => window.open(card.dataset.pdf, '_blank', 'noopener');
@@ -312,9 +312,7 @@ function filterCategory(cat) {
     });
 
     cards.forEach((card) => {
-        const shouldShow = cat === 'all'
-            ? card.dataset.category !== 'badges'
-            : card.dataset.category === cat;
+        const shouldShow = cat === 'all' ? true : card.dataset.category === cat;
 
         card.style.display = shouldShow ? 'flex' : 'none';
     });
